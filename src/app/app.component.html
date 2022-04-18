@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="timer">
+    {{ hr | timeFormatter }}:{{ min | timeFormatter }}:{{ sec | timeFormatter }}
+  </div>
+  <div class="game-container">
+    <div class="game">
+      <form action="#" (submit)="submitAnswer($event)">
+        <span>{{ numb1 }} + </span>
+        <span>{{ numb2 }} = </span>
+        <input maxlength="2" [(ngModel)]="answer" name="answer" />
+        <button
+          class="btn btn-primary"
+          type="submit"
+          (click)="submitAnswer($event)"
+        >
+          Submit
+        </button>
+      </form>
+      <span [ngClass]="[isError ? 'error' : 'success']">{{ message }}</span>
+    </div>
+
+    <div class="games-stats" id="">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Equation</th>
+            <th>Answer</th>
+            <th>Time Taken</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of gamesStats">
+            <td>{{ data.equation }}</td>
+            <td>{{ data.answer }}</td>
+            <td>{{ data.time }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

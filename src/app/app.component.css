@@ -1,0 +1,37 @@
+@import url('../styles.css');
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game {
+    height: 40vh;
+}
+
+.game :not(button){
+    font-size: var(--custom-font-size);
+}
+
+.game input {
+    /* font-size: 136px; */
+    width: calc(1.5 * var(--custom-font-size));
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+}
+
+.game > span {
+    font-size: 16px !important;
+}
+
+.game > span.error {
+    color: red;
+}
+
+.game > span.success {
+    color: green;
+}
+
