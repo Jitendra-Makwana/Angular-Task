@@ -77,6 +77,10 @@ export class AppComponent implements OnInit {
         this.isError = true;
         this.message = 'Please try again!';
         this.answer = '';
+        setTimeout(() => {
+          this.isError = false;
+          this.message = '';
+        }, 1000);
       }
     } catch (ex) {
       console.log(ex);
